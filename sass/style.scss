@@ -19,7 +19,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -44,68 +43,303 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
-
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
 @import "normalize";
-
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
-
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
-
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 @import "forms/forms";
-
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
-
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 @import "modules/accessibility";
-
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
 @import "modules/alignments";
-
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
 @import "modules/clearings";
-
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";
-
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 @import "site/site";
-
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 @import "modules/infinite-scroll";
-
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
 
+.site-header {
+  background: #2c3e50;
+  .flex-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+  }
+  .site-title {
+    display: inline-block;
+    margin-right: 5em;
+  }
+  .main-navigation {
+    ul {
+      margin-top: 3em;
+      li {
+        margin: 0 1em;
 
-body {
-  background: yellow;
+        a {
+          color: #ffffff;
+          font: 400 18px 'Roboto';
+          text-transform: uppercase;
+          &:hover {
+            color: #ff4848;
+          }
+        }
+        .current-menu-item {
+          a {
+            color: #ff4848;
+          }
+
+        }
+
+      }
+    }
+
+  }
+}
+
+.title-banner {
+  height: 6em;
+
+}
+
+.home-section {
+  background: #ff4848;
+  padding: 5em 3em;
+  .text-widget {
+    h3 {
+      color: #ffffff;
+      font: 400 60px 'Roboto', sans-serif;
+      text-transform: uppercase;
+    }
+    .textwidget {
+      color: #ffffff;
+      font: 300 24px 'Roboto', sans-serif;
+      h4 {
+        color: #ffffff;
+        font: 400 48px 'Roboto', sans-serif;
+      }
+      p {
+        color: #ffffff;
+        font: 400 24px 'Roboto', sans-serif;
+      }
+    }
+  }
+}
+
+.welcome {
+  background: #ffffff;
+  padding-top: 5em;
+  .text-widget {
+    margin-top: 5em;
+    h3 {
+      color: #004966;
+      font: 700 36px 'Roboto', sans-serif;
+      text-transform: uppercase;
+    }
+    .textwidget {
+      color: #004966;
+      font: 300 18px 'Roboto', sans-serif;
+    }
+  }
+}
+
+.service {
+  text-align: center;
+  background: #004966;
+  padding: 5em 0;
+  .text-widget {
+    h3 {
+      color: #ffffff;
+      font: 300 36px 'Roboto', sans-serif;
+    }
+    .textwidget {
+      color: #ffffff;
+      font: 400 18px 'Roboto', sans-serif;
+    }
+  }
+  .our-service {
+    margin-top: 8em;
+    padding-left: 0;
+    li {
+      display: inline-block;
+      img {
+        max-height: 116px;
+        width: auto;
+      }
+      h3 {
+        color: #ffffff;
+        font: 700 30px 'Roboto', sans-serif;
+      }
+      p {
+        color: #ffffff;
+        font: 400 18px 'Roboto', sans-serif;
+      }
+    }
+  }
+
+}
+.portfolio {
+  text-align: center;
+  padding: 5em 0;
+  .text-widget {
+    h3 {
+      color: #000000;
+      font: 300 36px 'Roboto', sans-serif;
+    }
+    .textwidget {
+      color: #000000;
+      font: 400 18px 'Roboto', sans-serif;
+    }
+  }
+}
+
+.blog {
+  .blog-main {
+    column-count: 2;
+    column-gap: 2em;
+    padding-top: 3em;
+    article {
+      border: 1px solid #000000;
+      text-align: center;
+      max-height: 500px;
+      display: inline-block;
+      .entry-content {
+        margin: 0;
+      }
+      .date {
+        border-top: 1px solid #afafaf;
+      }
+    }
+  }
+}
+
+footer {
+  .clients {
+    background: #ff4848;
+    text-align: center;
+    padding: 2em 0;
+    .text-widget {
+      margin-bottom: 4em;
+      h3 {
+        color: #ffffff;
+        font: 300 36px 'Roboto', sans-serif;
+      }
+
+    }
+  }
+  .contacts {
+    background: url("./img/bg-footers.png") center no-repeat;
+    padding: 3em 0 2em;
+    .text-widget {
+      h3 {
+        color: #ffffff;
+        font: 300 26px 'Roboto', sans-serif;
+      }
+      .textwidget {
+        p {
+          color: #ffffff;
+          font: 400 18px 'Roboto', sans-serif;
+        }
+        address {
+          color: #ffffff;
+          font: 300 18px 'Roboto', sans-serif;
+          a {
+            color: #ffffff;
+            font: 300 18px 'Roboto', sans-serif;
+          }
+        }
+
+      }
+    }
+    .contact-form {
+      margin-top: 2em;
+      input[type="text"] {
+        background-color: #fff;
+        font: 300 18px 'Roboto', sans-serif;
+        color: #777777;
+        width: 100%;
+        margin: 1em 0;
+        border-radius: 0;
+        padding: 1em;
+      }
+      input[type="email"] {
+        background-color: #fff;
+        font: 300 18px 'Roboto', sans-serif;
+        color: #777777;
+        width: 100%;
+        margin: 1em 0;
+        border-radius: 0;
+        padding: 1em;
+      }
+      textarea {
+        background-color: #fff;
+        font: 300 18px 'Roboto', sans-serif;
+        color: #777777;
+        width: 100%;
+        margin: 1em 0;
+        border-radius: 0;
+        padding: 1em;
+      }
+      .send-button {
+        background: #ff4747;
+        font: 700 24px 'Roboto', sans-serif;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+    }
+
+  }
+  .logo {
+    background: #17212a;
+    text-align: center;
+    padding: 2em;
+    .footer-title {
+      margin: 0;
+
+    }
+  }
+  .rights {
+    text-align: center;
+    background: #ff4747;
+    font: 300 18px 'Roboto', sans-serif;
+    color: #ffffff;
+    padding: 2em 0;
+    p{
+      padding: 0;
+      margin: 0;
+    }
+  }
 }

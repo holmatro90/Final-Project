@@ -10,6 +10,9 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-8">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -27,9 +30,11 @@ get_header(); ?>
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </main><!-- #main -->
+    </div>
+	    <?php get_sidebar(); ?>
+    </div>
+    </div>
+    </div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

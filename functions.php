@@ -83,6 +83,7 @@ function final_project_content_width() {
 }
 add_action( 'after_setup_theme', 'final_project_content_width', 0 );
 
+
 /**
  * Register widget area.
  *
@@ -98,8 +99,98 @@ function final_project_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Text Widget 1', 'final-project' ),
+		'description'   => __( 'Appears on section', 'final-project' ),
+		'id'            => 'main-1',
+		'before_widget' => '<div id="%1$s" class="text-widget %2$s col-sm-6">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Text Widget 2', 'final-project' ),
+		'description'   => __( 'Appears on section', 'final-project' ),
+		'id'            => 'main-2',
+		'before_widget' => '<div id="%1$s" class="text-widget %2$s col-sm-6">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Text Widget 3', 'final-project' ),
+		'description'   => __( 'Appears on section', 'final-project' ),
+		'id'            => 'main-3',
+		'before_widget' => '<div id="%1$s" class="text-widget %2$s ">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Text Widget 4', 'final-project' ),
+		'description'   => __( 'Appears on section', 'final-project' ),
+		'id'            => 'main-4',
+		'before_widget' => '<div id="%1$s" class="text-widget %2$s ">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget 1', 'final-project' ),
+		'description'   => __( 'Appears on section', 'final-project' ),
+		'id'            => 'main-10',
+		'before_widget' => '<div id="%1$s" class="text-widget %2$s ">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget 2', 'final-project' ),
+		'description'   => __( 'Appears on section', 'final-project' ),
+		'id'            => 'main-11',
+		'before_widget' => '<div id="%1$s" class="text-widget %2$s col-sm-6">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget 3', 'final-project' ),
+		'description'   => __( 'Appears on section', 'final-project' ),
+		'id'            => 'main-12',
+		'before_widget' => '<div id="%1$s" class="text-widget %2$s ">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'final_project_widgets_init' );
+
+
+
+add_action('customize_register', function($customizer){
+	$customizer->add_section(
+		'example_section_one',
+		array(
+			'title' => 'Изображенние для заголовка',
+			'description' => 'Изображенние',
+			'priority' => 35,
+		)
+	);
+
+	$customizer->add_setting('img-upload');
+	$customizer->add_control(
+		new WP_Customize_Image_Control(
+			$customizer,
+			'img-upload',
+			array(
+				'label' => 'Загрузка изображения',
+				'section' => 'example_section_one',
+				'settings' => 'img-upload'
+			)
+		)
+	);
+});
+
 
 /**
  * Enqueue scripts and styles.
@@ -131,6 +222,9 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+
+require get_template_directory() . '/inc/custom-post-type.php';
 
 /**
  * Customizer additions.

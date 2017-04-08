@@ -14,11 +14,36 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'final-project' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'final-project' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'final-project' ), 'final-project', '<a href="https://automattic.com/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+
+                <section class="clients">
+                    <div class="container">
+                        <div class="row">
+
+	                <?php if (!dynamic_sidebar('main-10')) : ?>
+	                <?php endif; // end widget area ?>
+<?php echo do_shortcode('[wpaft_logo_slider]') ?>
+                        </div>
+                    </div>
+                </section>
+                <section class="contacts">
+                    <div class="container">
+                        <div class="row">
+	                <?php if (!dynamic_sidebar('main-11')) : ?>
+	                <?php endif; // end widget area ?>
+                            <div class="col-sm-6 contact-form">
+		                        <?php echo do_shortcode('[contact-form-7 id="80" title="Untitled"]') ?>
+                            </div>
+                    </div>
+                </section>
+                <section class="logo">
+                    <h3 class="footer-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo wp_get_attachment_url(get_theme_mod('final_project-logo')); ?>" /></a></h3>
+
+                </section>
+                <section class="rights">
+                        <p> 	&#169; 2015  All Rights Reserved.</p>
+                </section>
+
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

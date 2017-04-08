@@ -13,17 +13,20 @@
  */
 
 get_header(); ?>
-
+    <section class="title-banner" style="background: url('<?php echo get_theme_mod('img-upload');?>') center/cover no-repeat;">
+        <h2><?php echo wp_get_document_title(); ?></h2>
+    </section>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+		<main id="main" class="site-main blog-main " role="main">
 
 		<?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+
 
 			<?php
 			endif;
@@ -40,7 +43,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			wp_pagenavi();
 
 		else :
 
@@ -49,8 +52,10 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
+        </div>
+	    <?php get_sidebar(); ?>
+    </div>
+    </div>
+    </div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>
